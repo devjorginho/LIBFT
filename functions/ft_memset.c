@@ -6,18 +6,19 @@
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:31:34 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/10/29 17:15:44 by jluiz-de         ###   ########.fr       */
+/*   Updated: 2024/10/30 14:11:48 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	if (n <= 0)
 		return (s);
 	*(unsigned char *)s = (unsigned char)c;
-	ft_memset((unsigned char *)s + 1, c, n - 1);
-	return(s);
+	ft_memset ((unsigned char *)s + 1, c, n - 1);
+	return (s);
 }
 /*#include<stdio.h>
 int	main()
