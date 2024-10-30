@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:05:44 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/10/30 16:30:52 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/10/30 16:06:57 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/10/30 16:26:21 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	size_t	src_len;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	src_len = ft_strlen(src);
+	if (size == 0)
+		return (src_len);
+	if (src_len + 1 < size)
+		ft_memcpy(dst, src, src_len + 1);
+	else if (size != 0)
+	{
+		ft_memcpy(dst, src, size - 1);
+		dst[size - 1] = 0;
+	}
+	return (src_len);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 int	main()
 {
-	char	str[24] = "DOTA IS BETTER THAN LOL";
-	printf("The string %s\nHave %d characteres", str, ft_strlen(str));
-	return (0);
-}*/
+	size_t	n = 3;
+	char	src[] = "Ola";
+	char	dst[n];
+	ft_strlcpy(dst, src, n);
+	printf("%s", dst);
+}
