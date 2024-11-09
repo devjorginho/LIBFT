@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:18:01 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/07 09:42:48 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 13:51:14 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/08 13:51:49 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (n >= 48 && n <= 57)
-		return (1);
-	return (0);
+	char	digit;
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		nb = -nb;
+		write(fd, "-", 1);
+	}
+	if (nb >= 10)
+		ft_putnbr_fd((nb / 10), fd);
+	digit = nb % 10 + '0';
+	write(fd, &digit, 1);
 }
-/*#include <stdio.h>
-int	main(int argc, char *argv[])
+/*
+int main(void)
 {
-	if (argc == 2)
-		printf("%d", ft_isdigit(argv[1][0]));
-	return(0);
-}*/
+    int num = -12345;
+    ft_putnbr_fd(num, 1);
+    return 0;
+}
+*/

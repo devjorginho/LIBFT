@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:18:01 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/07 09:42:48 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 13:48:15 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/08 13:48:43 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (n >= 48 && n <= 57)
-		return (1);
+	int	i;
+
+	i = 0;
+	if (fd < 0 || !s)
+		return ;
+	while (s[i] != '\0')
+		write(fd, &s[i++], 1);
+	write(fd, "\n", 1);
+}
+/*
+int	main(void)
+{
+	char	array[7] = "Test.";
+	int		fd;
+
+	fd = open("test.txt", O_RDWR);
+	if (fd < 0)
+		return (0);
+	ft_putendl_fd(array, fd);
 	return (0);
 }
-/*#include <stdio.h>
-int	main(int argc, char *argv[])
-{
-	if (argc == 2)
-		printf("%d", ft_isdigit(argv[1][0]));
-	return(0);
-}*/
+*/

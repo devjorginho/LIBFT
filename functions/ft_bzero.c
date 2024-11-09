@@ -6,7 +6,7 @@
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:52:38 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/10/30 13:15:33 by jluiz-de         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:10:39 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	ft_bzero(void *s, size_t n)
 int	main()
 {
 	char array[] = "Hello";
-	ft_bzero(array, 3);
+	ft_bzero(array + 2, 3);
 	printf("%s", array);
 }*/

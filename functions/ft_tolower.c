@@ -6,7 +6,7 @@
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 19:35:39 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/10/30 14:13:07 by jluiz-de         ###   ########.fr       */
+/*   Updated: 2024/11/07 12:24:07 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@ int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
-	else
-		return (c);
+	return (c);
 }
 /*#include <stdio.h>
 int	main()

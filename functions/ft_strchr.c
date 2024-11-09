@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 14:40:21 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/09 15:16:59 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 12:16:20 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/09 16:14:41 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*ptr_s;
+	size_t	i;
 
-	ptr_s = (unsigned char *)s;
-	while (n--)
-		*ptr_s++ = c;
-	return (s);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == '\0' && c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*#include <stdio.h>
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int i = 0;
-	char *res;
-	res = argv[1];
-	if (argc == 2)
+	char	array[20] = "Jorginho";
+	char *res = ft_strchr(array, 'i');
+	if (res != NULL)
 	{
-		ft_memset(&res[3], 'r', 2); // Test with the arv: Gueaaa
-		printf("%s", res);
+		printf("The character 'i'  was found at: %s\n", array);
+		printf("Its first occurrence was here %s", res);
 	}
+	else
+		printf("The character 'i' was not found");
 	return (0);
 }*/

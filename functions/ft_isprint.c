@@ -6,16 +6,17 @@
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:57:29 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/10/30 15:27:30 by jluiz-de         ###   ########.fr       */
+/*   Updated: 2024/11/04 22:20:48 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	if (n >= 32 && n <= 126)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 /*#include <stdio.h>
 int	main()

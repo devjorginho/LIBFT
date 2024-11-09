@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:42:23 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/04 21:54:47 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 12:20:02 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/08 12:24:19 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
+	}
 	return (0);
 }
-/*#include <stdio.h>
-int	main()
-{
-	char	l1 = 'Z';
-	int	n1 = 1;
-	int	n2 = 256;
-	int	n3 = -1;
 
-	printf("%d\n", ft_isascii(l1));
-	printf("%d\n", ft_isascii(n1));
-	printf("%d\n", ft_isascii(n2));
-	printf("%d\n", ft_isascii(n3));
-	return (0);
-}*/
+/*
+int	main(void)
+{
+	char	array[20] = "The car";
+	char	array2[20] = "The cAr";
+
+	printf("Original -> %d\n", strncmp(array, array2, sizeof(array)));
+	printf("MyFun -> %d\n", ft_strncmp(array, array2, sizeof(array)));
+}
+*/

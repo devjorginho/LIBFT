@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:18:01 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/07 09:42:48 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 13:46:29 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/08 13:46:54 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+//#include <stdio.h>
+//#include <fcntl.h>
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (n >= 48 && n <= 57)
-		return (1);
-	return (0);
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }
-/*#include <stdio.h>
-int	main(int argc, char *argv[])
+/*
+int	main(void)
 {
-	if (argc == 2)
-		printf("%d", ft_isdigit(argv[1][0]));
-	return(0);
-}*/
+	int	fd;
+
+	fd = open("Test.txt", O_WRONLY);
+	ft_putchar_fd('T', fd);
+	close(fd);
+}
+*/

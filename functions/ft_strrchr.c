@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 11:42:23 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/04 21:54:47 by jluiz-de         ###   ########.fr       */
+/*   Created: 2024/11/08 12:04:19 by jluiz-de          #+#    #+#             */
+/*   Updated: 2024/11/08 12:13:38 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
-}
-/*#include <stdio.h>
-int	main()
-{
-	char	l1 = 'Z';
-	int	n1 = 1;
-	int	n2 = 256;
-	int	n3 = -1;
+	int		i;
 
-	printf("%d\n", ft_isascii(l1));
-	printf("%d\n", ft_isascii(n1));
-	printf("%d\n", ft_isascii(n2));
-	printf("%d\n", ft_isascii(n3));
-	return (0);
-}*/
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return (&((char *)s)[i]);
+		i--;
+	}
+	return (NULL);
+}
+/*
+int main(void)
+{
+	char	array[20] = "";
+
+	printf("Original -> %d\n", strrchr(array, NULL));
+	printf("Minhafu. -> %d\n", ft_strrchr(array, NULL));
+	printf("Text size: '%s' -> %d\n", array, sizeof(array - 1));
+}
+*/
