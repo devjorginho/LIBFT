@@ -6,7 +6,7 @@
 /*   By: jluiz-de <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 13:59:30 by jluiz-de          #+#    #+#             */
-/*   Updated: 2024/11/08 13:59:39 by jluiz-de         ###   ########.fr       */
+/*   Updated: 2024/11/09 16:20:26 by jluiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,5 @@ void		ft_putnbr_fd(int n, int fd);
 
 /*
 **			Bonus functions ->												*/
-t_list		*ft_lstnew(void *content);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
-
+t_list	*ft_lstnew(void *content);
 #endif
