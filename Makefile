@@ -36,10 +36,10 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-#test: fclean $(NAME)
-#	$(CC) $(CFLAGS) main.c $(NAME) -lbsd -o test
-#	./test
-#	@ rm -f test
+test: fclean $(NAME)
+	$(CC) $(CFLAGS) main.c $(NAME) -lbsd -o test
+	./test
+	@ rm -f test
 
 re: fclean all
 
