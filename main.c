@@ -101,13 +101,17 @@ int	main()
 	printf("=== strlcat tests ===\n\n");
 	char strtocat1[] = "Jorginho is";
 	char strtocat2[] = " Amazing";
+	size_t	nnstrtocat1 = strlcat(strtocat1, strtocat2, 20);
 	printf("Input of dest: %s\nInput of src: %s\n", strtocat1, strtocat2);
 	strlcat(strtocat1, strtocat2, 20);
 	printf("Original function: %s\n", strtocat1);
+	printf("Size of str after cat: %zu\n", nnstrtocat1);
 	char strtocat3[] = "Jorginho is";
 	char strtocat4[] = " Amazing";
+	size_t	nnstrtocat2 = ft_strlcat(strtocat3, strtocat4, 20);
 	ft_strlcat(strtocat3, strtocat4, 20);
-	printf("My function: %s\n\n", strtocat3);
+	printf("My function: %s\n", strtocat3);
+	printf("Size of str after cat: %zu\n\n", nnstrtocat2);
 
 	printf("=== toupper tests ===\n\n");
 	printf("Input: %c\n", letter_a);
