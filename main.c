@@ -219,7 +219,7 @@ int	main()
 	}
 	printf("\n\n");
 
-	printf("=== calloc tests ===\n\n");
+	printf("=== strdup tests ===\n\n");
 	char stringdp[] = "Hello";
 	char *stringdp2 = strdup(stringdp);
 	printf("Input: %s\n", stringdp);
